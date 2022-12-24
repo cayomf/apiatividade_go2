@@ -1,0 +1,45 @@
+definitions:
+  models.EntregaRequest:
+    properties:
+      id:
+        type: integer
+      nota:
+        type: string
+    type: object
+host: localhost:8084
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is an example API.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Correção de Atividades API
+  version: "1.0"
+paths:
+  /updateEntrega:
+    post:
+      description: Atualiza a nota na entrega do aluno
+      parameters:
+      - description: EntregaRequest
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.EntregaRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.EntregaRequest'
+            type: array
+      summary: Atualiza a nota na entrega do aluno
+      tags:
+      - nota
+swagger: "2.0"

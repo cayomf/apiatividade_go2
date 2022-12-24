@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is an example API.",
+        "title": "Correção de Atividades API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8084",
+    "paths": {
+        "/updateEntrega": {
+            "post": {
+                "description": "Atualiza a nota na entrega do aluno",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "nota"
+                ],
+                "summary": "Atualiza a nota na entrega do aluno",
+                "parameters": [
+                    {
+                        "description": "EntregaRequest",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EntregaRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.EntregaRequest"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.EntregaRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "nota": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
